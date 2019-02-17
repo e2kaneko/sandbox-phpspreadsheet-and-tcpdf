@@ -17,7 +17,7 @@ class HomeController extends Controller
         File::setUseUploadTempDirectory(public_path());
 
         $writer = IOFactory::createWriter($spreadsheet, 'Tcpdf');
-        $writer->setFont('ipaexm');    //日本語文字化け対策
+        $writer->setFont('ipaexm');
         $writer->save(public_path() . '/excel/output.pdf');
 
         $writer = new Xlsx($spreadsheet);
